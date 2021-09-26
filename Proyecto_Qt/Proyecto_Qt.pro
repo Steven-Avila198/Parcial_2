@@ -7,4 +7,8 @@ CONFIG -= app_bundle
 QT += core
 QT += gui
 SOURCES += \
+        ficheros.cpp \
         main.cpp
+
+HEADERS += \
+    ficheros.h
