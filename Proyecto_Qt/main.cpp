@@ -1,13 +1,13 @@
 #include <iostream>
 #include <QImage>
-#include <QString>
+#include "ficheros.h"
 
 using namespace std;
 
-//bool QImage::load(const QString &fileName, const char *format=nullptr);
 
 int main()
 {
+    Ficheros obj1;
     //Solicitud de nombre para cargar la imagen
 
     string filename = "";
@@ -34,7 +34,7 @@ int main()
         //----------------------------------------------------------------//
 
         for(unsigned int indy = 0; indy < alto; ++indy){
-            cout << indx << ", " << indy << " = " <<img.pixelColor(indx,indy).red() <<endl;
+            //cout << indx << ", " << indy << " = " <<img.pixelColor(indx,indy).red() <<endl;
 
             //capa de color rojo de la imagen
             Red[indx][indy]= img.pixelColor(indx,indy).red();
@@ -45,6 +45,7 @@ int main()
         }
 
     }
+
     /* //Ciclo para imprimir matriz de pixeles por color para comparar con los pixeles de la imagen original//
     for(unsigned int i=0;i<ancho;i++)
     {
@@ -57,6 +58,6 @@ int main()
     delete [] Red;
     delete [] Green;
     delete [] Blue;
-
+    obj1.escrbir(ancho,alto);
     return 0;
 }
