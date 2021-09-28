@@ -16,7 +16,7 @@ public:
 
     void llenarMatrizGrande(unsigned **Red2, unsigned **Green2, unsigned **Blue2, unsigned ancho2, unsigned alto2);//para imagen mayor que 16x16
     void llenarGrande(unsigned **llenarMatriz2,unsigned  ancho2, unsigned  alto2);
-private:    
+private:
     ofstream archivo;
 
 };

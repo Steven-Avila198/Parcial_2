@@ -40,7 +40,7 @@ int main()
     }
     //seleccion del tamaño de la imagen
     if(alto==16 && ancho==16){//16*16
-        obj1.llenarMatriz(Red,Green,Blue,ancho,alto);        
+        obj1.llenarMatriz(Red,Green,Blue,ancho,alto);
     }
     else if(alto>16 && ancho>16){//mayor a 16x16
         obj1.llenarMatrizGrande(Red,Green,Blue,ancho,alto);
