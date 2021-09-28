@@ -1,9 +1,4 @@
-#include <iostream>
-#include <QImage>
 #include "ficheros.h"
-
-using namespace std;
-
 
 int main()
 {
@@ -16,8 +11,8 @@ int main()
     string ruta = "../Proyecto_Qt/Banderas/"+filename;
     QImage img(ruta.c_str());  //imagen ya cargada
 
-    unsigned int ancho = img.width (); // ancho de la imagen
-    unsigned int alto = img.height(); // altura de la imagen
+    unsigned  ancho = img.width (); // ancho de la imagen
+    unsigned  alto = img.height(); // altura de la imagen
 
     //-------------Asignacion de memoria dinamica para arreglo de punteros----------------//
     unsigned int **Red=new unsigned*[ancho];
@@ -35,7 +30,6 @@ int main()
 
         for(unsigned int indy = 0; indy < alto; ++indy){
             //cout << indx << ", " << indy << " = " <<img.pixelColor(indx,indy).red() <<endl;
-
             //capa de color rojo de la imagen
             Red[indx][indy]= img.pixelColor(indx,indy).red();
             //capa de color verde de la imagen
@@ -43,21 +37,22 @@ int main()
             //capa de color azul de la imagen
             Blue[indx][indy]= img.pixelColor(indx,indy).blue();
         }
-
+    }
+    //seleccion del tamaño de la imagen
+    if(alto==16 && ancho==16){//16*16
+        obj1.llenarMatriz(Red,Green,Blue,ancho,alto);        
+    }
+    else if(alto>16 && ancho>16){//mayor a 16x16
+        obj1.llenarMatrizGrande(Red,Green,Blue,ancho,alto);
+    }
+    else if(alto<16 && ancho<16){
+        cout<<"Vuelva el LUNES"<<endl;
     }
 
-    /* //Ciclo para imprimir matriz de pixeles por color para comparar con los pixeles de la imagen original//
-    for(unsigned int i=0;i<ancho;i++)
-    {
-        for(unsigned int j = 0 ; j <alto;j++){
-            cout<<Green[i][j]<<" ";
-            }
-        cout<<endl;
-    }*/
 
+    //obj1.escrbir(ancho,alto);
     delete [] Red;
     delete [] Green;
     delete [] Blue;
-    obj1.escrbir(ancho,alto);
     return 0;
 }
