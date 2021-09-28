@@ -40,7 +40,7 @@ int main()
     }
     //seleccion del tamaño de la imagen
     if(alto==16 && ancho==16){//16*16
-        obj1.llenarMatriz(Red,Green,Blue,ancho,alto);        
+        obj1.llenarMatriz(Red,Green,Blue,ancho,alto);
     }
     else if(alto>16 && ancho>16){//mayor a 16x16
         obj1.llenarMatrizGrande(Red,Green,Blue,ancho,alto);
@@ -56,3 +56,23 @@ int main()
     delete [] Blue;
     return 0;
 }
+/*const int pinDatos = 4;
+const int numPixeles = 16*16;
+
+Adafruit_NeoPixel pixeles = Adafruit_NeoPixel( numPixeles, pinDatos,
+                                              NEO_GRB+NEO_KHZ800);
+void setup()
+{
+  pixeles.begin();
+
+  for(unsigned int i = 0; i < 16; i++){
+    for(unsigned int j = 0; j < 16; j++){
+      pixeles.setPixelColor( 16*i+j, pixeles.Color(arr[0][i][j],arr[1][i][j],arr[2][i][j]));
+    }
+  }
+
+  pixeles.show();
+
+}
+void loop(){}
+iet-aprm-zyv*/

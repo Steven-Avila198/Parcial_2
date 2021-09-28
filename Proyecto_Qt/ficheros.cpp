@@ -92,17 +92,23 @@ void Ficheros::llenarMatrizGrande(unsigned **Red, unsigned **Green, unsigned **B
 
 void Ficheros::llenarGrande(unsigned **llenarMatriz2, unsigned ancho2, unsigned alto2)
 {
-
+    unsigned aux=0, aux2=0,tempAux=0,tempAux2=0;
+    aux=ancho2/16,aux2=alto2/16;
+    tempAux=aux;
+    tempAux2=aux2;
     string llenarFichero;
-    cout<<ancho2<<"x"<<alto2<<endl;
     archivo.open("Grande.txt", fstream::app | fstream::ate);
     llenarFichero+="{";
     archivo<<llenarFichero;
-    for(unsigned i=0;i<ancho2;i++){
+    for(unsigned  i=tempAux;i<=(tempAux*16);i+=tempAux){
         llenarFichero="{";
         archivo<<llenarFichero;
         llenarFichero="";
-        for(unsigned j=0;j<alto2;j++){
+        aux=i*tempAux;
+
+        //cout<<i<<endl;
+        for(unsigned j=tempAux2;j<=(tempAux2*16);j+=tempAux2){
+            aux2=i*tempAux2;
             llenarFichero=to_string(llenarMatriz2[i][j]);
             archivo<<llenarFichero;
             if(j<alto2-1){
