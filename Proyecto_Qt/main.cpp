@@ -45,12 +45,11 @@ int main()
     else if(alto>16 && ancho>16){//mayor a 16x16
         obj1.llenarMatrizGrande(Red,Green,Blue,ancho,alto);
     }
-    else if(alto<16 && ancho<16){
-        cout<<"Vuelva el LUNES"<<endl;
+    else if(alto<16 && ancho<16){//para la rama menor a 16x16
+        //cout<<"aqui"<<endl;
+        //obj1.llenarMatrizPequena(Red,Green,Blue,ancho,alto);
     }
 
-
-    //obj1.escrbir(ancho,alto);
     delete [] Red;
     delete [] Green;
     delete [] Blue;

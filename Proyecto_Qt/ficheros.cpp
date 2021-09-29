@@ -125,3 +125,62 @@ void Ficheros::llenarGrande(unsigned **llenarMatriz2, unsigned ancho2, unsigned 
     archivo<<llenarFichero;
     archivo.close();
 }
+
+/*void Ficheros::llenarMatrizPequena(unsigned **Red3, unsigned **Green3, unsigned **Blue3, unsigned ancho3, unsigned alto3)
+{
+    string llenar2="{";
+    archivo.open("pequena.txt",fstream ::app | fstream::ate);
+    archivo<<llenar2;
+    archivo.close();
+
+    llenarPeq(Red3,ancho3,alto3);
+    archivo.open("pequena.txt", fstream::app | fstream::ate);
+    archivo<<",\n\n";
+    archivo.close();
+
+    llenarPeq(Green3,ancho3,alto3);
+    archivo.open("pequena.txt", fstream::app | fstream::ate);
+    archivo<<",\n\n";
+    archivo.close();
+
+    llenarPeq(Blue3,ancho3,alto3);
+    archivo.open("pequena.txt", fstream::app | fstream::ate);
+    archivo<<"};\n";
+    archivo.close();
+}
+
+void Ficheros::llenarPeq(unsigned **llenarMatriz3, unsigned ancho3, unsigned alto3)
+{
+    unsigned au=0, au2=0,tempAu=0,tempAu2=0;
+    au=ancho3/16,au2=alto3/16;
+    tempAu=au;
+    tempAu2=au2;
+    string llenarFichero;
+    archivo.open("pequena.txt", fstream::app | fstream::ate);
+    llenarFichero+="{";
+    archivo<<llenarFichero;
+    for(unsigned  i=tempAu;i<=(tempAu*16);i+=tempAu){
+        llenarFichero="{";
+        archivo<<llenarFichero;
+        llenarFichero="";
+        au=i*tempAu;
+
+        for(unsigned j=tempAu;j<=(tempAu2*16);j+=tempAu2){
+            au=i*tempAu2;
+            llenarFichero=to_string(llenarMatriz3[i][j]);
+            archivo<<llenarFichero;
+            if(j<alto3-1){
+                archivo<<",";
+            }
+            llenarFichero="";
+        }
+        llenarFichero="}";
+        archivo<<llenarFichero;
+        if(i<ancho3){
+            archivo<<",\n";
+        }
+    }
+    llenarFichero="}";
+    archivo<<llenarFichero;
+    archivo.close();
+}*/
